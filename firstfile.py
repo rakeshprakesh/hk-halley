@@ -10,4 +10,4 @@ df = df.withColumn("age_count", col("age_count") + 1)
 df = df.withColumn("age_count", col("age_count") * 2)
 df = df.withColumn("age_count", col("age_count") - 1)
 df.show()
-df.write.mode("overwrite").parquet("output.parquet"
+df.write.mode("overwrite").parquet("output.parquet")
