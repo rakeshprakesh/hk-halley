@@ -307,3 +307,5 @@ if __name__ == "__main__":
             initialize_dimension_tables(engine)
             
         append_sales_fact_data(engine, num_records=500000)
+
+# --- No changes to the file
