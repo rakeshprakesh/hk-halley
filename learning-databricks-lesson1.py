@@ -14,4 +14,6 @@ schema = StructType([
 spark = SparkSession.builder.appName("SalesDatasetGenerator").getOrCreate()
 df = spark.read.csv("dbfs:/FileStore/tables/sales_data.csv", header=True, inferSchema=False, schema=schema)
 df = df.withColumn("price", col("price").cast(FloatType())).withColumn("order_date", col("order_date").cast(DateType()))
+df = df.withColumn("price", col("price").cast(FloatType())).withColumn("order_date", col("order_date").cast(DateType()))
+df = df.withColumn("price", col("price").cast(FloatType())).withColumn("order_date", col("order_date").cast(DateType()))
 
