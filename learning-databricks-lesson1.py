@@ -14,3 +14,4 @@ schema = StructType([
 spark = SparkSession.builder.appName("SalesDatasetGenerator").getOrCreate()
 df = spark.read.csv("dbfs:/FileStore/tables/sales_data.csv", header=True, inferSchema=False, schema=schema)
 df = spark.read.parquet("abfss://raw@storageaccountname.dfs.core.windows.net/sales_data.parquet")
+df = df.withColumn("order_date", col("order_date").cast(DateType()))
