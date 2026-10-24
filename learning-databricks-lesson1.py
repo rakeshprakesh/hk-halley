@@ -16,3 +16,4 @@ df = spark.read.csv("dbfs:/FileStore/tables/sales_data.csv", header=True, inferS
 df = spark.read.parquet("abfss://raw@storageaccountname.dfs.core.windows.net/sales_data.parquet")
 df = df.withColumn("order_date", col("order_date").cast(DateType()))
 df = df.withColumn("price", col("price").cast(FloatType()))
+df = df.withColumn("quantity", col("quantity").cast(IntegerType()))
