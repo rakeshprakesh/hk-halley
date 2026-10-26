@@ -17,6 +17,7 @@ df = spark.read.csv("dbfs:/FileStore/tables/sales_data.csv", header=True, inferS
 df = spark.read.parquet("abfss://raw@storageaccountname.dfs.core.windows.net/sales_data.parquet")
 df = df.withColumn("order_date", col("order_date").cast(DateType()))
 df = df.withColumn("price", col("price").cast(FloatType()))
+<<<<<<< HEAD
 df = df.withColumn("quantity", col("quantity").cast(IntegerType()))
 
 @dp.pipeline(
@@ -28,3 +29,6 @@ def process_sales_data(df):
     df = df.withColumn("total_amount", col("quantity") * col("price"))
     df = df.withColumn("discounted_amount", col("total_amount") * lit(0.9))
     return df
+=======
+df = df.withColumn("quantity", col("quantity").cast(IntegerType()))
+>>>>>>> faa8f2061ddcbfa2baa63f0f346dcdcf7e552e5e
