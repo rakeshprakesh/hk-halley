@@ -29,3 +29,4 @@ def process_sales_data(df):
     df = df.withColumn("discounted_amount", col("total_amount") * lit(0.9))
     return df
 df = df.withColumn("quantity", col("quantity").cast(IntegerType()))
+df = df.withColumn("price", col("price").cast(FloatType()))
