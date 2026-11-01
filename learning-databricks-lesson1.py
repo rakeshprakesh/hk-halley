@@ -30,3 +30,4 @@ def process_sales_data(df):
     return df
 df = df.withColumn("quantity", col("quantity").cast(IntegerType()))
 df = df.withColumn("price", col("price").cast(FloatType()))
+df = spark.read.csv("dbfs:/FileStore/tables/sales_data.csv", header=True, inferSchema=False, schema=schema)
